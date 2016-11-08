@@ -1,4 +1,4 @@
-lean repository, DerivedData folder and simulator
+#Clean repository, DerivedData folder and simulator
 git reset --hard
 git clean -fd
 rm -rf ~/Library/Developer/Xcode/DerivedData/PitchPerfect

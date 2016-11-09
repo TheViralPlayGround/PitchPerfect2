@@ -1,0 +1,5 @@
+-destination "platform=iOS Simulator,name=iPhone 6,OS=8.3" \9
+-sdk iphonesimulator \
+-reporter junit:test-results/TEST-UnitTests.xml \10
+-reporter pretty \11
+clean test

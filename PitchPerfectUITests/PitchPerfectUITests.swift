@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PitchPerfectUITests: XCTestCase {
+class PPTestForMe: XCTestCase {
         
     override func setUp() {
         super.setUp()

@@ -19,6 +19,7 @@ class ViewController: UIViewController , AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stopRecordingButton.isEnabled = false
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -34,21 +35,6 @@ class ViewController: UIViewController , AVAudioRecorderDelegate {
         recordingLabel.text = "Recording in progress."
         stopRecordingButton.isEnabled = true
         recordButton.isEnabled = false
-        
-        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-        let recordingName = "recordedVoice.wav"
-        let pathArray = [dirPath, recordingName]
-        let filePath = NSURL.fileURL(withPathComponents: pathArray)
-        print(filePath)
-        
-        let session = AVAudioSession.sharedInstance()
-        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        
-        try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
-        audioRecorder.delegate = self
-        audioRecorder.isMeteringEnabled = true
-        audioRecorder.prepareToRecord()
-        audioRecorder.record()
     
     }
     
@@ -58,8 +44,6 @@ class ViewController: UIViewController , AVAudioRecorderDelegate {
         recordButton.isEnabled = true
         stopRecordingButton.isEnabled = false
         audioRecorder.stop()
-        let audioSession = AVAudioSession.sharedInstance()
-        try! audioSession.setActive(false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

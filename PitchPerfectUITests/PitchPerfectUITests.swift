@@ -32,17 +32,8 @@ class PitchPerfectUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        
-        let element = XCUIApplication().children(matching: .window).element(boundBy: 2).children(matching: .other).element.children(matching: .other).element(boundBy: 1)
-        element.tap()
-        element.swipeDown()
-        element.tap()
-        element.tap()
-        element.tap()
-        element.tap()
-        element.tap()
-        element.tap()
-        element.tap()
+        let app = XCUIApplication()
+        app.otherElements.containing(.staticText, identifier:"Tap to Record").children(matching: .button).element(boundBy: 0).tap()
         
     }
     
